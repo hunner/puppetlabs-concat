@@ -1,6 +1,6 @@
 require 'spec_helper_acceptance'
 
-describe 'replacement of' do
+describe 'replacement of', :unless => UNSUPPORTED_PLATFORMS.include?(fact('osfamily')) do
   basedir = default.tmpdir('concat')
   context 'file' do
     context 'should not succeed' do

@@ -1,6 +1,6 @@
 require 'spec_helper_acceptance'
 
-describe 'concat order' do
+describe 'concat order', :unless => UNSUPPORTED_PLATFORMS.include?(fact('osfamily')) do
   basedir = default.tmpdir('concat')
   before(:all) do
     shell("rm -rf #{basedir} #{default.puppet['vardir']}/concat")
@@ -76,7 +76,7 @@ describe 'concat order' do
   end
 end # concat order
 
-describe 'concat::fragment order' do
+describe 'concat::fragment order', :unless => UNSUPPORTED_PLATFORMS.include?(fact('osfamily')) do
   basedir = default.tmpdir('concat')
   before(:all) do
     shell("rm -rf #{basedir} #{default.puppet['vardir']}/concat")

@@ -12,7 +12,7 @@ else
   groupname = 'root'
 end
 
-describe 'basic concat test' do
+describe 'basic concat test', :unless => UNSUPPORTED_PLATFORMS.include?(fact('osfamily')) do
   basedir = default.tmpdir('concat')
 
   shared_examples 'successfully_applied' do |pp|
