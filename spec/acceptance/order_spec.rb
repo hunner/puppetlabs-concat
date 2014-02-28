@@ -35,7 +35,7 @@ describe 'concat order', :unless => UNSUPPORTED_PLATFORMS.include?(fact('osfamil
     describe file("#{basedir}/foo") do
       it { should be_file }
       #XXX Solaris 10 doesn't support multi-line grep
-      it("should contain string10\nstring1\nsring2", :unless => fact('osfamily') == 'Solaris' or UNSUPPORTED_PLATFORMS.include?(fact('osfamily'))) {
+      it("should contain string10\nstring1\nsring2", :unless => fact('osfamily') == 'Solaris' || UNSUPPORTED_PLATFORMS.include?(fact('osfamily'))) {
         should contain "string10\nstring1\nsring2"
       }
     end
@@ -69,7 +69,7 @@ describe 'concat order', :unless => UNSUPPORTED_PLATFORMS.include?(fact('osfamil
     describe file("#{basedir}/foo") do
       it { should be_file }
       #XXX Solaris 10 doesn't support multi-line grep
-      it("should contain string1\nstring2\nsring10", :unless => fact('osfamily') == 'Solaris' or UNSUPPORTED_PLATFORMS.include?(fact('osfamily'))) {
+      it("should contain string1\nstring2\nsring10", :unless => fact('osfamily') == 'Solaris' || UNSUPPORTED_PLATFORMS.include?(fact('osfamily'))) {
         should contain "string1\nstring2\nsring10"
       }
     end
@@ -112,7 +112,7 @@ describe 'concat::fragment order', :unless => UNSUPPORTED_PLATFORMS.include?(fac
     describe file("#{basedir}/foo") do
       it { should be_file }
       #XXX Solaris 10 doesn't support multi-line grep
-      it("should contain string3\nstring2\nsring1", :unless => fact('osfamily') == 'Solaris' or UNSUPPORTED_PLATFORMS.include?(fact('osfamily'))) {
+      it("should contain string3\nstring2\nsring1", :unless => fact('osfamily') == 'Solaris' || UNSUPPORTED_PLATFORMS.include?(fact('osfamily'))) {
         should contain "string3\nstring2\nsring1"
       }
     end
@@ -147,7 +147,7 @@ describe 'concat::fragment order', :unless => UNSUPPORTED_PLATFORMS.include?(fac
     describe file("#{basedir}/foo") do
       it { should be_file }
       #XXX Solaris 10 doesn't support multi-line grep
-      it("should contain string1\nstring2\nsring3", :unless => fact('osfamily') == 'Solaris' or UNSUPPORTED_PLATFORMS.include?(fact('osfamily'))) {
+      it("should contain string1\nstring2\nsring3", :unless => fact('osfamily') == 'Solaris' || UNSUPPORTED_PLATFORMS.include?(fact('osfamily'))) {
         should contain "string1\nstring2\nsring3"
       }
     end
