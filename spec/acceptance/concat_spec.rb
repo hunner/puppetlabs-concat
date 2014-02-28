@@ -51,7 +51,7 @@ describe 'basic concat test', :unless => UNSUPPORTED_PLATFORMS.include?(fact('os
       it { should be_owned_by username }
       it { should be_grouped_into groupname }
       # XXX file be_mode isn't supported on AIX
-      it("should be mode 644", :unless => fact('osfamily') == "AIX") {
+      it("should be mode 644", :unless => fact('osfamily') == "AIX") or UNSUPPORTED_PLATFORMS.include?(fact('osfamily')) {
         should be_mode 644
       }
       it { should contain '1' }
@@ -62,7 +62,7 @@ describe 'basic concat test', :unless => UNSUPPORTED_PLATFORMS.include?(fact('os
       it { should be_owned_by username }
       it { should be_grouped_into groupname }
       # XXX file be_mode isn't supported on AIX
-      it("should be mode 644", :unless => fact('osfamily') == "AIX") {
+      it("should be mode 644", :unless => fact('osfamily') == "AIX") or UNSUPPORTED_PLATFORMS.include?(fact('osfamily')) {
         should be_mode 644
       }
     end
@@ -71,7 +71,7 @@ describe 'basic concat test', :unless => UNSUPPORTED_PLATFORMS.include?(fact('os
       it { should be_owned_by username }
       it { should be_grouped_into groupname }
       # XXX file be_mode isn't supported on AIX
-      it("should be mode 644", :unless => fact('osfamily') == "AIX") {
+      it("should be mode 644", :unless => fact('osfamily') == "AIX") or UNSUPPORTED_PLATFORMS.include?(fact('osfamily')) {
         should be_mode 644
       }
     end

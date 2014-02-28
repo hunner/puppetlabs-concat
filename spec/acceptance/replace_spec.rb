@@ -118,7 +118,7 @@ describe 'replacement of', :unless => UNSUPPORTED_PLATFORMS.include?(fact('osfam
       end
 
       # XXX specinfra doesn't support be_linked_to on AIX
-      describe file("#{basedir}/file"), :unless => fact("osfamily") == "AIX" do
+      describe file("#{basedir}/file"), :unless => fact("osfamily") == "AIX" or UNSUPPORTED_PLATFORMS.include?(fact('osfamily')) do
         it { should be_linked_to "#{basedir}/dangling" }
       end
 
