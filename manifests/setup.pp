@@ -25,6 +25,7 @@ class concat::setup {
     default: {
       # Should work otherwise
     }
+  }
   $id = $::id
   $root_group = $id ? {
     root    => 0,
